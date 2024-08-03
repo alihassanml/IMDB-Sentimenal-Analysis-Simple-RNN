@@ -25,9 +25,9 @@ def predict_sentiment(text):
     encoded_review = preprocess_text(text)
     prediction = my_model.predict(encoded_review)[0][0]
     if prediction > 0.5:
-        return 'Positive'
+        st.success('Your Comment is Positive')
     else:
-        return 'Negative'
+        st.error('Your Comment is Negative')
 
 # Streamlit app
 st.title("Movie Review Sentiment Analysis")
@@ -37,6 +37,6 @@ st.write("Enter a movie review to predict its sentiment")
 review_text = st.text_area("")
 
 if st.button("Predict Sentiment"):
-    sentiment = predict_sentiment(review_text)
-    st.write(f"Sentiment: {sentiment}")
+    predict_sentiment(review_text)
+    
 
