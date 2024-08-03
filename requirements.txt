@@ -1,3 +1,6 @@
 tensorflow
 keras
 numpy 
+pandas 
+tensorflow
+streamlit
